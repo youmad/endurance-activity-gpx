@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Foundation\ValueObject\Instant;
 
 /** Caller owns the unchanged repeatable point source until staging finishes. */
 final readonly class PreparedGpxActivity

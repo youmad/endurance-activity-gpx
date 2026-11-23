@@ -3,14 +3,14 @@
 Import one recorded GPX track through Endurance Activity's staged writer.
 
 ```bash
-composer require youmad/endurance-activity-gpx
+composer require endurance/activity-gpx
 ```
 
 Supply an Activity stream importer and an application callback that creates the
 Activity with the validated start time:
 
 ```php
-use Youmad\Endurance\ActivityGpx\Import\ImportGpxActivity;
+use Endurance\ActivityGpx\Import\ImportGpxActivity;
 
 $result = new ImportGpxActivity($activityStreamImporter)->import(
     activityId: $activityId,

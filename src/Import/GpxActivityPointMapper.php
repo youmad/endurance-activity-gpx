@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Telemetry\ActivityObservation;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\MeasurementSource;
-use Youmad\Endurance\Activity\Telemetry\MeasurementType;
-use Youmad\Endurance\Activity\Telemetry\MeasurementUnit;
-use Youmad\Endurance\Activity\Telemetry\PositionMeasurement;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityAnalysis\TrackAnalyzer;
-use Youmad\Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
-use Youmad\Endurance\Foundation\ValueObject\Coordinate;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Gpx\Model\GpxPoint;
+use Endurance\Activity\Telemetry\ActivityObservation;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\MeasurementSource;
+use Endurance\Activity\Telemetry\MeasurementType;
+use Endurance\Activity\Telemetry\MeasurementUnit;
+use Endurance\Activity\Telemetry\PositionMeasurement;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityAnalysis\TrackAnalyzer;
+use Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
+use Endurance\Foundation\ValueObject\Coordinate;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Gpx\Model\GpxPoint;
 
 /** @internal */
 final readonly class GpxActivityPointMapper

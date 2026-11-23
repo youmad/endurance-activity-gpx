@@ -2,29 +2,29 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Tests;
+namespace Endurance\ActivityGpx\Tests;
 
+use Endurance\Activity\Application\Import\ActivityImportGenerationClaim;
+use Endurance\Activity\Application\Import\ActivityImportItemDispatcher;
+use Endurance\Activity\Application\Import\Handler\ActivityLifecycleItemHandler;
+use Endurance\Activity\Application\Import\Handler\ObservationItemHandler;
+use Endurance\Activity\Application\Port\ActivityImportGenerationRepository;
+use Endurance\Activity\Application\Port\ActivityRepository;
+use Endurance\Activity\Application\Port\ActivityTransaction;
+use Endurance\Activity\Application\Port\StagedActivityObservationWriter;
+use Endurance\Activity\Application\UseCase\ActivityImportGenerationCoordinator;
+use Endurance\Activity\Application\UseCase\ApplyActivityLifecycleEvent;
+use Endurance\Activity\Application\UseCase\ImportActivityStream;
+use Endurance\Activity\Entity\Activity;
+use Endurance\Activity\Telemetry\ActivityObservation;
+use Endurance\Activity\Telemetry\MeasurementOrigin;
+use Endurance\Activity\ValueObject\ActivityImportGenerationId;
+use Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
+use Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
+use Endurance\ActivityGpx\Import\ImportGpxActivity;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportGenerationClaim;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItemDispatcher;
-use Youmad\Endurance\Activity\Application\Import\Handler\ActivityLifecycleItemHandler;
-use Youmad\Endurance\Activity\Application\Import\Handler\ObservationItemHandler;
-use Youmad\Endurance\Activity\Application\Port\ActivityImportGenerationRepository;
-use Youmad\Endurance\Activity\Application\Port\ActivityRepository;
-use Youmad\Endurance\Activity\Application\Port\ActivityTransaction;
-use Youmad\Endurance\Activity\Application\Port\StagedActivityObservationWriter;
-use Youmad\Endurance\Activity\Application\UseCase\ActivityImportGenerationCoordinator;
-use Youmad\Endurance\Activity\Application\UseCase\ApplyActivityLifecycleEvent;
-use Youmad\Endurance\Activity\Application\UseCase\ImportActivityStream;
-use Youmad\Endurance\Activity\Entity\Activity;
-use Youmad\Endurance\Activity\Telemetry\ActivityObservation;
-use Youmad\Endurance\Activity\Telemetry\MeasurementOrigin;
-use Youmad\Endurance\Activity\ValueObject\ActivityImportGenerationId;
-use Youmad\Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
-use Youmad\Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
-use Youmad\Endurance\ActivityGpx\Import\ImportGpxActivity;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class ImportGpxActivityTest extends TestCase
 {
@@ -81,7 +81,7 @@ final class ImportGpxActivityTest extends TestCase
         $stream = $this->stream($content);
         try {
             $this->expectException(UnsupportedGpxActivity::class);
-            $importer->import(\Youmad\Endurance\Activity\ValueObject\ActivityId::generate(), ActivityImportIdempotencyKey::fromString('bad'), $stream, onPrepared: static function (): void { self::fail('Unsupported input reached preparation callback.'); });
+            $importer->import(\Endurance\Activity\ValueObject\ActivityId::generate(), ActivityImportIdempotencyKey::fromString('bad'), $stream, onPrepared: static function (): void { self::fail('Unsupported input reached preparation callback.'); });
         } finally {
             fclose($stream);
         }

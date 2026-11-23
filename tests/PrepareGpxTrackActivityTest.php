@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Tests;
+namespace Endurance\ActivityGpx\Tests;
 
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Telemetry\MeasurementOrigin;
+use Endurance\Activity\ValueObject\ActivityId;
+use Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
+use Endurance\ActivityGpx\Import\PrepareGpxTrackActivity;
+use Endurance\Gpx\Model\GpxDocument;
+use Endurance\Gpx\Model\GpxObject;
+use Endurance\Gpx\Model\GpxPoint;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Telemetry\MeasurementOrigin;
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
-use Youmad\Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
-use Youmad\Endurance\ActivityGpx\Import\PrepareGpxTrackActivity;
-use Youmad\Endurance\Gpx\Model\GpxDocument;
-use Youmad\Endurance\Gpx\Model\GpxObject;
-use Youmad\Endurance\Gpx\Model\GpxPoint;
 
 final class PrepareGpxTrackActivityTest extends TestCase
 {

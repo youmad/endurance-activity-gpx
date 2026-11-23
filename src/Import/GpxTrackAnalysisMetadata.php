@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Telemetry\MeasurementMetadata;
-use Youmad\Endurance\ActivityAnalysis\TrackAnalyzer;
+use Endurance\Activity\Telemetry\MeasurementMetadata;
+use Endurance\ActivityAnalysis\TrackAnalyzer;
 
 final readonly class GpxTrackAnalysisMetadata implements MeasurementMetadata
 {

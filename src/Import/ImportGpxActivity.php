@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Application\UseCase\ImportActivityStream;
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
-use Youmad\Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
-use Youmad\Endurance\ActivityAnalysis\TrackAnalyzer;
-use Youmad\Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Gpx\Model\GpxPoint;
-use Youmad\Endurance\Gpx\Reader;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Application\UseCase\ImportActivityStream;
+use Endurance\Activity\ValueObject\ActivityId;
+use Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
+use Endurance\ActivityAnalysis\TrackAnalyzer;
+use Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Gpx\Model\GpxPoint;
+use Endurance\Gpx\Reader;
 
 final readonly class ImportGpxActivity
 {

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
-use Youmad\Endurance\ActivityAnalysis\TrackAnalyzer;
-use Youmad\Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
-use Youmad\Endurance\Gpx\Model\GpxDocument;
-use Youmad\Endurance\Gpx\Model\GpxObject;
-use Youmad\Endurance\Gpx\Model\GpxPoint;
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\ValueObject\ActivityId;
+use Endurance\ActivityAnalysis\TrackAnalyzer;
+use Endurance\ActivityGpx\Exception\UnsupportedGpxActivity;
+use Endurance\Gpx\Model\GpxDocument;
+use Endurance\Gpx\Model\GpxObject;
+use Endurance\Gpx\Model\GpxPoint;
 
 final readonly class PrepareGpxTrackActivity
 {

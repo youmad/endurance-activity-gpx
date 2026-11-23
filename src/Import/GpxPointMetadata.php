@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Telemetry\MeasurementMetadata;
+use Endurance\Activity\Telemetry\MeasurementMetadata;
 
 final readonly class GpxPointMetadata implements MeasurementMetadata
 {

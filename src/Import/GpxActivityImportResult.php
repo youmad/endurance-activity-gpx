@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityGpx\Import;
+namespace Endurance\ActivityGpx\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportResult;
+use Endurance\Activity\Application\Import\ActivityImportResult;
 
 final readonly class GpxActivityImportResult
 {
